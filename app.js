@@ -7,6 +7,7 @@ const tipoUsuarioRoute = require("./routes/TipoUsuarioRoute");
 const entidadRouter = require("./routes/EntidadRoute");
 const usuarioRouter = require("./routes/UsuarioRoute");
 const importanciaRouter = require("./routes/ImportanciaRoute");
+const tipoRouter = require("./routes/TipoRoute");
 
 const port = 9091;
 
@@ -52,6 +53,8 @@ app.use("/api", tipoUsuarioRoute);
 app.use("/api", entidadRouter);
 app.use("/api", usuarioRouter);
 app.use("/api", importanciaRouter);
+app.use("/api", tipoRouter);
+
 app.use((error, req, res, next) => {
   console.log(error);
   const status = error.statusCode || 500;
